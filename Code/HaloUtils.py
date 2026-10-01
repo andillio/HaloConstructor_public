@@ -143,8 +143,8 @@ def dens_out_func(beta, X, beta0 = 0):
 	:beta: array-like, 
 	"""
 	beta_ = beta.copy()
-	if beta0 > 0:
-		beta_[0] =beta0
+	if beta0.item() > 0:
+		beta_[0] =beta0.item()
 	return np.einsum("ji,j->i", X, beta_)
 
 
